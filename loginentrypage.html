@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="loginentry.css">
+    <link rel="icon" href="image (2).jpeg">
+    <title>Navbar and Cards Example</title>
+    <link rel="stylesheet" href="adding.js">
+    <link rel="stylesheet" href="dynamic.css">
+
+    <style>
+        .nav{
+            margin-top: 2vh;
+            padding:20px;
+            background-color: #333;
+            /* color: rgb(245, 157, 69); */
+            background-color:rgb(245, 157, 69);
+            color:#333;
+        }
+        .nav1{
+            font-size: large;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+          
+        }
+    
+        .container {
+          display: flex;
+          width: 80%;
+          margin: 0 auto; 
+          padding: 20px;
+          margin-top: -50vh;
+          
+        }
+    
+        .left-side {
+          flex: 1;
+          text-align: center;
+        }
+    
+        .left-side img {
+          
+          height: 90vh;
+          margin-left: -10vw;
+          margin-top: -5px;
+          
+        }
+        #footer {
+          position: relative;
+          bottom: 0;
+          width: 100%;
+          background-color: rgb(245, 157, 69);
+          color: #333;
+          padding: 20px 0;
+          text-align: center;
+          margin-top: 50px;
+        }
+      .footersome {
+          padding:60px 40px 10px 40px;
+          color:#333;
+          font-size:20px;
+        }
+        .footersome a {
+          margin-right:10px;
+
+        }
+        .footersome a svg {
+          height: 20px;
+          color: #333;
+
+        }
+        .footersome a:hover,.footersome a:active{
+          color:#333;
+        }
+       svg:hover{
+          color:#333;
+        }
+      .footer-links {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+      }
+      .footer-links a {
+          color: #333;
+          text-decoration: none;
+      }
+
+      .footer-links a:hover {
+          text-decoration: underline;
+      }
+
+        .right-side {
+          margin-top: -10vh;
+          flex: 2;
+          padding: 10px;
+          box-sizing: border-box;
+        
+        }
+      
+        .logo {
+          max-width: 100%;
+          height: auto;
+          margin-left: 20%;
+          margin-top: -30px;
+          justify-content: center;
+        }
+    
+        .form {
+          margin-left: 30%;
+          margin-top: 5vh;
+          border-radius: 8px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+    
+        .form select,
+        .form input {
+          border: none;
+          outline: none;
+          font-size: large;
+        }
+    
+        .drop {
+          color: red;
+          padding-right: 10px;
+        }
+        .equal{
+            display: flex;
+            flex-direction: row;
+            width:30vw;
+            
+        }
+        .ck{
+            padding-bottom: 20px;
+            
+
+        }
+        h3{
+            margin-top: -2vh;
+            justify-content: center;
+        }
+        h2{
+          color:#333;
+        }
+
+        .card1, .card2,.card3,.card4{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+        
+        .cards{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          
+         
+        }
+        .cards2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 40px;
+        }
+        .card5, .card6,.card7,.card8{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+       
+        .dynamic-cards{
+          height: 100px;
+        }
+        
+        .card img {
+        max-width: 263px; /* Set max-width to 250px */
+        max-height: 150px; /* Set max-height to 150px */
+        height: auto; /* Allow the image to adjust its height while maintaining aspect ratio */
+        width: auto; /* Allow the image to adjust its width while maintaining aspect ratio */
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding-right: 20px;
+        margin-left: -10px;
+        padding-bottom: 10px;
+       
+      
+    }
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+       border-radius: 20px;
+        gap: 20px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 30px;
+        
+    }
+    
+    .delete-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        padding: 0;
+    }
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: 243px; /* Set width to 250px */
+        height: 250px; /* Set height to 150px */
+        text-align: center;
+        position: relative; /* Required for absolute positioning of delete button */
+        border-radius: 20px;
+        padding-top: 40px;
+       
+        
+    }
+    h2{
+      justify-content: center;
+      
+    }
+    #cardForm{
+      justify-content: center;
+    }
+      </style>
+    
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="equal">
+                <img class="ck" style="height: 100px; width: 150px;" src="image (2).jpeg" alt="" class="logo">
+                <h2 style="margin-left: 30px; margin-top: 30px;" >Get the App</h2>
+            </div>
+            <ul class="nav1">
+                <li><b><a href="loginentrypage.html" style="text-decoration: none; color: black;" >Home</a></b></li>
+                <li class="menu" style=" color: black;"><b><a href="#cards" style="text-decoration: none; color: black;">Menu</a></b></li>
+                <li class="menu" style=" color: black;"><b><a href="profile2.html" style="text-decoration: none; color: black;">Profile</a> </b></li>
+                <li class="menu" style=" color: black;"><b><a href="about.html" style="text-decoration: none; color: black;">About Us</a></b></li>
+                <li class="menu" style=" color: black;"><b ><a class="menu" id="c" href="choosePayment.html" style="text-decoration: none; color: black;">Cart</a></b></li>
+                <li class="menu" style=" color: black;"><b ><a class="menu" href="signup2.html" style="text-decoration: none; color: black;">Sign Up </a></b></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container">
+        <div class="left-side">
+          <img src="plate-removebg-preview.png" alt="Plate Image">
+        </div>
+        <div class="right-side">
+          <div class="head" style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
+            <img style="height: 250px; margin-top: 60px; margin-bottom: -5vh;" src="ck2.png" alt="" class="logo">
+            <h3 style=" width: 30vw;  margin-left: 36%; font-size: 30px; color: white; margin-top: 4vh; padding-left: 170px;">DELICIOUS</h3>
+            <h3 style=" width: 30vw;  margin-left: 45%; font-size: 30px; color: white;color: rgb(245, 157, 69); font-size:40px ; padding-left: 70px;">FOOD MENU</h3>
+            <form class="form">
+              <i class="drop fa-solid fa-location-dot"></i>
+              <label class="drop" for="dropdown"></label>
+              <select class="drop" id="dropdown" name="dropdown">
+                <option value="option1">Hyderabad</option>
+                <option value="option2">Warangal</option>
+                <option value="option3">Nalgonda</option>
+                <option value="option3">Vizag</option>
+                <option value="option3">Medak</option>
+                
+              </select>   
+              
+              <i style="margin-left: 30px;" class="fa-solid fa-magnifying-glass"></i>
+              
+              <input type="text" placeholder="Search for the Restaurant" style="font-size: large; margin-left: 10px;">   
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cards" id="cards">
+        <div class="card1">
+          <h2><a href="veg2.html" style="text-decoration: none; color: black;" >Vegetarian</a></h2>
+          <a href="veg2.html" style="text-decoration: none; color: black;"><img style="width: 250px;" src="veg.jpeg" alt=""></a>
+   
+         
+        </div>
+        <div class="card2">
+          <h2><a href="nonveg2.html" style="text-decoration: none; color: black;">Non Vegetarian</a></h2>
+          <a href="nonveg2.html" style="text-decoration: none; color: black;"><img style="width: 250px; height: 140px;" src="nonveg.jpeg" alt=""></a>
+        </div>
+        <div class="card3">
+          <h2><a href="dessert2.html" style="text-decoration: none; color: black;">Dessert</a></h2>
+          <a href="dessert2.html" style="text-decoration: none; color: black;"><img style="width: 250px;" src="cake.jpeg" height="150", width="300"></a>
+        </div>
+        <div class="card4">
+          <h2><a href="tiffins2.html" style="text-decoration: none; color: black;">Tiffins</a></h2>
+          <a href="tiffins2.html" style="text-decoration: none; color: black;"><img style="width: 250px;" src="tiffins.jpeg" height="150", width="300"></a>
+        
+        </div>
+      </div>
+      <div class="cards2">
+      
+        <div class="card5">
+          <h2><a href="sweets2.html" style="text-decoration: none; color: black;">Sweets</a></h2>
+          <a href="sweets2.html" style="text-decoration: none; color: black;"><img style="width: 250px; height: 145px;" src="sweets.jpeg" alt=""></a>
+        </div>
+        <div class="card6">
+          <h2><a href="drinks2.html" style="text-decoration: none; color: black;">Drinks</a></h2>
+          <a href="drinks2.html" style="text-decoration: none; color: black;"> <img style="width: 250px; height: 145px;" src="juices.jpeg" alt=""></a>
+        </div>
+        <div class="card7">
+          <h2 ><a href="rices2.html" style="text-decoration: none; color: black;">Rices</a></h2>
+          <a href="rices2.html" style="text-decoration: none; color: black;"><img style="width: 250px; height: 140px;" src="rices.jpeg" alt=""></a>
+        </div>
+        <div class="card8">
+          <h2><a href="snacks2.html" style="text-decoration: none; color: black;">Snacks</a></h2>
+          <a href="snacks2.html" style="text-decoration: none; color: black;"><img style="width: 250px; height: 140px;" src="snacks.jpeg" alt=""></a>
+        </div>
+      </div>
+      <h2 style="justify-content: center;">Add a New Card</h2>
+    <form id="cardForm" style="justify-content: center;">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+        <br><br>
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="imageUrl" required>
+        <br><br>
+        <button type="submit">Add Card</button>
+    </form>
+
+    <div class="card-container" id="cardContainer" ><a href="dynamicCard.html"></a></div>
+
+    
+    
+  </div> 
+      <div id="footer" style="margin-bottom: 40px; margin-top: 200px;">
+        <p style="margin-bottom: -40px;">Contact us at cloudkitchen07@gamil.com</p>
+        <div class="footersome">
+            <a target="_blank"style="padding-left: 40px;" href="https://www.linkedin.com/in/dudekula-karishma/" title="LinkedIn" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+            <a target="_blank"style="padding-left: 40px; color:#333" href="https://www.instagram.com/w3schools.com_official/" title="W3Schools on Instagram"><i class="fa">&#61805;</i></a>
+            <a target="_blank"style="padding-left: 40px; text-decoration:none; color:#333;" href="about.html" title="About" class="textlink">ABOUT</a>  
+        </div>
+        <div class="footer-links">
+            <a href="pp.html">Privacy Policy</a>
+            <a href="terms.html" style="margin-left: -50px; ">Terms of Service</a>
+            <a href="">FAQs</a>
+        </div>
+        
+        <script>
+          document.getElementById('cardForm').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent form submission
+  
+              // Get values from the form
+              var title = document.getElementById('title').value;
+              var imageUrl = document.getElementById('imageUrl').value;
+  
+              // Create a new card element
+              var card = document.createElement('div');
+              card.classList.add('card');
+              card.innerHTML = `
+                  
+                  <h3>${title}</h3>
+                  <img src="${imageUrl}" alt="${title}">
+                  <button class="delete-btn">X</button>
+              `;
+  
+              // Append the card to the card container
+              document.getElementById('cardContainer').appendChild(card);
+  
+              // Save the card data to localStorage
+              saveCardData(title, imageUrl);
+  
+              // Clear the form fields for the next input
+              document.getElementById('title').value = '';
+              document.getElementById('imageUrl').value = '';
+  
+              // Add event listener to the delete button
+              var deleteBtn = card.querySelector('.delete-btn');
+              deleteBtn.addEventListener('click', function() {
+                  card.remove(); // Remove the card from the DOM
+                  deleteCardData(title); // Remove the card data from localStorage
+              });
+          });
+  
+          // Function to save card data to localStorage
+          function saveCardData(title, imageUrl) {
+              var cards = JSON.parse(localStorage.getItem('cards')) || [];
+              var newCard = { title: title, imageUrl: imageUrl };
+              cards.push(newCard);
+              localStorage.setItem('cards', JSON.stringify(cards));
+          }
+  
+          // Function to delete card data from localStorage
+          function deleteCardData(title) {
+              var cards = JSON.parse(localStorage.getItem('cards')) || [];
+              var updatedCards = cards.filter(function(card) {
+                  return card.title !== title;
+              });
+              localStorage.setItem('cards', JSON.stringify(updatedCards));
+          }
+  
+          // Load cards from localStorage when the page loads
+          window.addEventListener('load', function() {
+              var storedCards = JSON.parse(localStorage.getItem('cards')) || [];
+              storedCards.forEach(function(cardData) {
+                  renderCard(cardData);
+              });
+          });
+  
+          // Function to render a card
+          function renderCard(cardData) {
+              var cardContainer = document.getElementById('cardContainer');
+              var card = document.createElement('div');
+              card.classList.add('card');
+              var cardLink = document.createElement('a');
+             cardLink.setAttribute('href', 'dynamicCard.html'); 
+             cardLink.setAttribute('target', '_blank'); // Open link in a new tab
+              card.innerHTML = `
+                  
+                  <h2>${cardData.title}</h2>
+                  <img src="${cardData.imageUrl}" alt="${cardData.title}">
+                  <button class="delete-btn">X</button>
+              `;
+              card.appendChild(cardLink);
+              cardContainer.appendChild(card);
+  
+              // Add event listener to the delete button
+              var deleteBtn = card.querySelector('.delete-btn');
+              deleteBtn.addEventListener('click', function() {
+                  card.remove(); 
+                  deleteCardData(cardData.title);
+              });
+          }
+      </script>
+         
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="icon" href="image (2).jpeg">
+  <link rel="stylesheet" href="loginentry.css">
+  <style>
+    .nav{
+            margin-top: 2vh;
+            padding:20px;
+            background-color: #333;
+            /* color: rgb(245, 157, 69); */
+            background-color:rgb(245, 157, 69);
+            color:#333;
+        }
+        .nav1{
+            font-size: large;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+          
+        }
+    
+        .container {
+          display: flex;
+          width: 80%;
+          margin: 0 auto; 
+          padding: 20px;
+          margin-top: -50vh;
+          
+        }
+    
+        .left-side {
+          flex: 1;
+          text-align: center;
+        }
+    
+        .left-side img {
+          
+          height: 90vh;
+          margin-left: -10vw;
+          margin-top: -5px;
+          
+        }
+    
+        .right-side {
+          margin-top: -10vh;
+          flex: 2;
+          padding: 10px;
+          box-sizing: border-box;
+        
+        }
+    
+        .logo {
+          max-width: 100%;
+          height: auto;
+          margin-left: 20%;
+          margin-top: -30px;
+          justify-content: center;
+        }
+    
+        .form {
+          margin-left: 30%;
+          margin-top: 5vh;
+          border-radius: 8px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+    
+        .form select,
+        .form input {
+          border: none;
+          outline: none;
+          font-size: large;
+        }
+    
+        .drop {
+          color: red;
+          padding-right: 10px;
+        }
+        .equal{
+            display: flex;
+            flex-direction: row;
+            width:30vw;
+            
+        }
+        .ck{
+            padding-bottom: 20px;
+            
+
+        }
+        h3{
+            margin-top: -2vh;
+            justify-content: center;
+        }
+        h2{
+          color:#333;
+        }
+
+        .card1, .card2,.card3,.card4{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+        
+        .cards{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          
+         
+        }
+        .cards2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 40px;
+        }
+        .card5, .card6,.card7,.card8{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+       
+    /* Add some basic styling for the cards */
+    body{
+      background-color: black;
+      color: white;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border:2px solid #333;
+          height: 250px;
+          /* width: 1900px; */
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          margin-left: 30px;
+          margin-right: 20px;
+    }
+    .card:hover {
+      background-color: #f0f0f0;
+    }
+    .cart-container {
+      
+    }
+    img{
+        width:300px;
+    }
+    .place{
+      margin-top: -40vh;
+    }
+    #footer {
+          position: relative;
+          bottom: 0;
+          width: 100%;
+          background-color: rgb(245, 157, 69);
+          color: #333;
+          padding: 20px 0;
+          text-align: center;
+          margin-top: 50px;
+        }
+      .footersome {
+          padding:60px 40px 10px 40px;
+          color:#333;
+          font-size:20px;
+        }
+        .footersome a {
+          margin-right:10px;
+
+        }
+        .footersome a svg {
+          height: 20px;
+          color: #333;
+
+        }
+        .footersome a:hover,.footersome a:active{
+          color:#333;
+        }
+       svg:hover{
+          color:#333;
+        }
+      .footer-links {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px;
+      }
+      .footer-links a {
+          color: #333;
+          text-decoration: none;
+      }
+
+      .footer-links a:hover {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <div class="equal">
+            <img class="ck" style="height: 100px; width: 150px;" src="image (2).jpeg" alt="" class="logo">
+            <h2 style="margin-left: 30px; margin-top: 30px;" >Get the App</h2>
+        </div>
+        <ul class="nav1">
+            <li><b><a href="loginentrypage.html" style="text-decoration: none; color: black;" >Home</a></b></li>
+            <li class="menu" style=" color: black;"><b><a href="loginentrypage.html#cards" style="text-decoration: none; color: black;">Menu</a></b></li>
+            <li class="menu" style=" color: black;"><b><a href="profile2.html" style="text-decoration: none; color: black;">Profile</a>  </b></li>
+            <li class="menu" style=" color: black;"><b><a href="about.html" style="text-decoration: none; color: black;">About Us</a></b></li>
+            <li class="menu" style=" color: black;"><b ><a class="menu" id="c" href="choosePayment.html" style="text-decoration: none; color: black;">Cart</a></b></li>
+            <li class="menu" style=" color: black;"><b ><a class="menu" href="signup2.html" style="text-decoration: none; color: black;">Sign Up </a></b></li>
+        </ul>
+    </div> 
+</header>
+  <!-- Cart container -->
+  <div class="place" style="margin-left: 65vw; padding-bottom: 10px; ">
+    <h1 style="margin-top: -50px; margin-left: -60vw;">Add Items to Cart</h1>
+    <div style="text-align: center;" class="cart-container">
+        <h2 style="color:white">Shopping Cart Bill</h2>
+        <ul id="cart-items" style="list-style: none;">
+            <!-- Cart items will be added here -->
+        </ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button class="order-button" onclick="orderNow()">Order Now</button>
+        <button class="reset-button" onclick="resetCart()">Reset Cart</button>
+    </div>
+</div>
+
+
+
+  <!-- Cards container -->
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card" onclick="addToCart('LADDU', 10)">
+      <h2>LADDU - $10</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://2.bp.blogspot.com/-Dd4AwnHAJ80/WUGD37mQvBI/AAAAAAAAI0M/Wb30E78K-lcnTBQb_ARVf75VlUIQYYoXACLcBGAs/s1600/000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A%2B%25281%2529.jpg" alt="">
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="card" onclick="addToCart('GULAB JAMUN', 15)">
+      <h2>GULAB JAMUN - $15</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://i1.wp.com/beautyglown.com/wp-content/uploads/2019/02/Gulab-Jamun-recipe.jpg?fit=1300%2C697&ssl=1" alt="">
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="card" onclick="addToCart('RASMALAI', 8)">
+      <h2>RASMALAI - $8</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://www.cookwithmanali.com/wp-content/uploads/2014/07/Rasmalai-Recipe.jpg" height="150" width="300" alt="">
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" onclick="addToCart('MOTICHOOR LADDU', 12)">
+      <h2>MOTICHOOR LADDU - $12</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://www.awesomecuisine.com/wp-content/uploads/2008/08/Motichoor-Ladoo.jpg" alt="">
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card" onclick="addToCart('MYSORE PAK', 6)">
+      <h2>MYSORE PAK - $6</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://th.bing.com/th/id/R.f923c7784635b478270811bda2ae1a16?rik=3qOVU2L%2fUMQKZw&riu=http%3a%2f%2fwww.mylaibazar.com%2findian-heritage%2fwp-content%2fuploads%2f2015%2f08%2fmysore-pack.jpg&ehk=u629cloLdQvw9j1eXJOBBBuCDo4W%2bGMv15w55%2bKvOOM%3d&risl=&pid=ImgRaw&r=0" alt="">
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card" onclick="addToCart('RASGULLA', 4)">
+      <h2>RASGULLA - $4</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;"src="https://www.awesomecuisine.com/wp-content/uploads/2014/10/rasgulla.jpg" alt="">
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card" onclick="addToCart('BARFI', 4)">
+      <h2>BARFI</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://static.toiimg.com/photo/msid-66476943/66476943.jpg?1830301" alt="">
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card" onclick="addToCart('JALEBI', 4)">
+      <h2>JALEBI</h2>
+      <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://images.indianexpress.com/2020/04/jalebis-759.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="addToCart('HALWA', 4)">
+        <h2>HALWA</h2>
+        <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://www.desiblitz.com/wp-content/uploads/2020/01/Different-Types-of-Halwa-to-Make-at-Home-carrot.jpg" alt="">
+      </div>
+      <div class="card" onclick="addToCart('KALAKAND', 4)">
+        <h2>KALAKAND</h2>
+        <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://www.boldsky.com/img/2015/09/21-1442817824-image-.jpg" alt="">
+      </div>
+      <div class="card" onclick="addToCart('DOODH PEDA', 4)">
+        <h2>DOODH PEDA</h2>
+        <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://3.bp.blogspot.com/-xU0baAM_o0s/Vjg0uiqMAEI/AAAAAAAAEkM/cTgAsfg5Rjo/s1600/Doodh%2Bpeda.jpg" alt="">
+      </div>
+      <div class="card" onclick="addToCart('DOUBLE KA MEETHA', 4)">
+        <h2>DOUBLE KA MEETHA</h2>
+        <img  style="width: 295px; height:130px; margin-left: -20px; border-radius: 20px;" src="https://i.pinimg.com/originals/b7/a9/7a/b7a97a4217ba465b284fdb5fd523d3f4.jpg" alt="">
+      </div>
+  </div>
+  <div id="footer" style="margin-bottom: 40px; margin-top: 90px;">
+    <p style="margin-bottom: -40px;">Contact us at cloudkitchen07@gamil.com</p>
+    <div class="footersome">
+        <a target="_blank"style="padding-left: 40px;" href="https://www.linkedin.com/in/dudekula-karishma/" title="LinkedIn" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+        <a target="_blank"style="padding-left: 40px; color:#333" href="https://www.instagram.com/w3schools.com_official/" title="W3Schools on Instagram"><i class="fa">&#61805;</i></a>
+        <a target="_blank"style="padding-left: 40px; text-decoration:none; color:#333;" href="about.html" title="About" class="textlink">ABOUT</a>  
+    </div>
+    <div class="footer-links">
+        <a href="pp.html">Privacy Policy</a>
+        <a href="terms.html" style="margin-left: -50px; ">Terms of Service</a>
+        <a href="">FAQs</a>
+    </div>
+</div> 
+  
+<script>
+  let cartItems = [];
+  let totalAmount = 0;
+
+  // Load shopping history from Local Storage
+  let shoppingHistory = JSON.parse(localStorage.getItem('shoppingHistory')) || [];
+
+  function addToCart(itemName, itemPrice) {
+      // Add item to cart
+      cartItems.push({ name: itemName, price: itemPrice });
+
+      // Update total amount
+      totalAmount += itemPrice;
+
+      // Update cart display
+      updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+      const cartItemsElement = document.getElementById('cart-items');
+      const totalElement = document.getElementById('total');
+
+      // Clear previous cart items
+      cartItemsElement.innerHTML = '';
+
+      // Add each item to the cart display
+      cartItems.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${item.name} - $${item.price}`;
+          cartItemsElement.appendChild(listItem);
+      });
+
+      // Update total amount
+      totalElement.textContent = totalAmount;
+  }
+
+  function resetCart() {
+      // Clear cart items array and reset total amount
+      cartItems = [];
+      totalAmount = 0;
+
+      // Update cart display
+      updateCartDisplay();
+  }
+
+  function orderNow() {
+      // Save current order to shopping history
+      shoppingHistory.push({ items: cartItems, total: totalAmount });
+      localStorage.setItem('shoppingHistory', JSON.stringify(shoppingHistory));
+
+      // Redirect to the payment page with cart items and total amount as parameters
+      const queryString = `?items=${JSON.stringify(cartItems)}&total=${totalAmount}`;
+      window.location.href = `choosePay1.html${queryString}`;
+  }
+</script>
+</body>
+</html>

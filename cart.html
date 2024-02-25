@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="loginentry.css">
+  <style>
+    .nav{
+            margin-top: 2vh;
+            padding:20px;
+            background-color: #333;
+            /* color: rgb(245, 157, 69); */
+            background-color:rgb(245, 157, 69);
+            color:#333;
+        }
+        .nav1{
+            font-size: large;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+          
+        }
+    
+        .container {
+          display: flex;
+          width: 80%;
+          margin: 0 auto; 
+          padding: 20px;
+          margin-top: -50vh;
+          
+        }
+    
+        .left-side {
+          flex: 1;
+          text-align: center;
+        }
+    
+        .left-side img {
+          
+          height: 90vh;
+          margin-left: -10vw;
+          margin-top: -5px;
+          
+        }
+    
+        .right-side {
+          margin-top: -10vh;
+          flex: 2;
+          padding: 10px;
+          box-sizing: border-box;
+        
+        }
+    
+        .logo {
+          max-width: 100%;
+          height: auto;
+          margin-left: 20%;
+          margin-top: -30px;
+          justify-content: center;
+        }
+    
+        .form {
+          margin-left: 30%;
+          margin-top: 5vh;
+          border-radius: 8px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+    
+        .form select,
+        .form input {
+          border: none;
+          outline: none;
+          font-size: large;
+        }
+    
+        .drop {
+          color: red;
+          padding-right: 10px;
+        }
+        .equal{
+            display: flex;
+            flex-direction: row;
+            width:30vw;
+            
+        }
+        .ck{
+            padding-bottom: 20px;
+            
+
+        }
+        h3{
+            margin-top: -2vh;
+            justify-content: center;
+        }
+        h2{
+          color:#333;
+        }
+
+        .card1, .card2,.card3,.card4{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+        
+        .cards{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          
+         
+        }
+        .cards2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 40px;
+        }
+        .card5, .card6,.card7,.card8{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+       
+    /* Add some basic styling for the cards */
+    body{
+      background-color: black;
+      color: white;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border:2px solid #333;
+          height: 250px;
+          /* width: 1900px; */
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          margin-left: 30px;
+          margin-right: 20px;
+    }
+    .card:hover {
+      background-color: #f0f0f0;
+    }
+    .cart-container {
+      
+    }
+    img{
+        width:300px;
+    }
+    .place{
+      margin-top: -40vh;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <div class="equal">
+            <img class="ck" style="height: 100px; width: 150px;" src="image (2).jpeg" alt="" class="logo">
+            <h2 style="margin-left: 30px; margin-top: 30px;" >Get the App</h2>
+        </div>
+        <ul class="nav1">
+            <li><b><a href="loginentrypage.html" style="text-decoration: none; color: black;" >Home</a></b></li>
+            <li class="menu" style=" color: black;"><b><a href="#cards" style="text-decoration: none; color: black;">Menu</a></b></li>
+            <li class="menu" style=" color: black;"><b>Profile </b></li>
+            <li class="menu" style=" color: black;"><b><a href="about.html" style="text-decoration: none; color: black;">About Us</a></b></li>
+            <li class="menu" style=" color: black;"><b ><a class="menu" href="signup2.html" style="text-decoration: none; color: black;">Sign Up </a></b></li>
+        </ul>
+    </div> 
+</header>
+  <!-- Cart container -->
+  <div class="place">
+    <h1>Add Items to Carts</h1>
+      <div  style="text-align: center;";class="cart-container">
+        <h2 style="color:white">Shopping Cart Bill</h2>
+        <ul id="cart-items" style="list-style: none;">
+          <!-- Cart items will be added here -->
+        </ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button class="order-button" onclick="orderNow()">Order Now</button>
+      
+      </div>
+   </div>
+
+  <!-- Cards container -->
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card" onclick="addToCart('Vegetarian', 10)">
+      <h2>Vegetarian - $10</h2>
+      <img style="width: 250px;" src="veg.jpeg" alt="">
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="card" onclick="addToCart('Non Vegetarian', 15)">
+      <h2>Non Vegetarian - $15</h2>
+      <img style="width: 250px; height: 140px;" src="nonveg.jpeg" alt="">
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="card" onclick="addToCart('Dessert', 8)">
+      <h2>Dessert - $8</h2>
+      <img style="width: 250px;" src="cake.jpeg" height="150" width="300" alt="">
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" onclick="addToCart('Tiffins', 12)">
+      <h2>Tiffins - $12</h2>
+      <img style="width: 250px; height: 150px;" src="tiffins.jpeg" alt="">
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card" onclick="addToCart('Sweets', 6)">
+      <h2>Sweets - $6</h2>
+      <img style="width: 250px; height: 145px;" src="sweets.jpeg" alt="">
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card" onclick="addToCart('Drinks', 4)">
+      <h2>Drinks - $4</h2>
+      <img style="width: 250px; height: 145px;" src="juices.jpeg" alt="">
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card">
+      <h2>Rices</h2>
+      <img style="width: 250px; height: 140px;" src="rices.jpeg" alt="">
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card">
+      <h2>Snacks</h2>
+      <img style="width: 250px; height: 140px;" src="snacks.jpeg" alt="">
+    </div>
+  </div>
+  
+  <script>
+    let cartItems = [];
+    let totalAmount = 0;
+
+    function addToCart(itemName, itemPrice) {
+      // Add item to cart
+      cartItems.push({ name: itemName, price: itemPrice });
+      
+      // Update total amount
+      totalAmount += itemPrice;
+
+      // Update cart display
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartItemsElement = document.getElementById('cart-items');
+      const totalElement = document.getElementById('total');
+
+      // Clear previous cart items
+      cartItemsElement.innerHTML = '';
+
+      // Add each item to the cart display
+      cartItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - $${item.price}`;
+        cartItemsElement.appendChild(listItem);
+      });
+
+      // Update total amount
+      totalElement.textContent = totalAmount;
+    } 
+    function orderNow() {
+      // Redirect to the payment page with cart items and total amount as parameters
+      const queryString = `?items=${JSON.stringify(cartItems)}&total=${totalAmount}`;
+      window.location.href = `choosePay1.html${queryString}`;
+    }
+  </script>
+
+  <!-- JavaScript to handle adding items to the cart -->
+  </body>
+</html>

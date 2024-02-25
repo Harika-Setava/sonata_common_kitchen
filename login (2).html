@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+        <link rel="icon" href="image (2).jpeg">
+        <link rel="icon" href="image (2).jpeg">
+        <title>Login</title>
+        <style>
+            body {
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #f0f0f0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              background-color: rgb(245, 157, 69);
+            }
+
+            .container {
+              height: 100vh;
+              width: 80%; 
+              max-width: 400px; 
+              border-radius: 20px;
+              background-color: #ffffff;
+              text-align: center;
+              padding: 20px;
+              box-sizing: border-box;
+              margin-top: -2vh;
+              color:rgb(245, 157, 69);
+              background-color:  #333;
+            }
+
+            form {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .img {
+              height: 120px;
+              width: 250px;
+              margin-bottom: 8px;
+              margin-top: -15px;
+            }
+
+            h1 {
+              margin-bottom: -20px;
+              
+              
+            }
+
+            label {
+              font-weight: bold;
+              margin-top: 10px;
+            }
+
+            input {
+              width: 100%;
+              padding: 10px;
+              margin: 8px 0;
+              box-sizing: border-box;
+            }
+
+            a {
+              text-decoration: none;
+              color: #007bff;
+            }
+
+            button {
+              background-color: #007bff;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              margin-top: 10px;
+            }
+
+            button:hover {
+              background-color: #0056b3;
+            }
+
+            p {
+              margin-top: 10px;
+            }
+            .logo{
+                margin-left: 20vw;
+            }
+            @media only screen and (max-width: 600px) {
+              body {
+                background-color: lightblue;
+              }
+            }
+        </style>
+</head>
+<body>
+    <div class="logo">
+        <img style=" width: 300px; height: 250px; margin-left: -40vw; margin-top: -50vh;" src="ck2.png" alt="" class="logo">
+    </div>
+
+    <div class="container" style="height: 90vh; width:auto; border-radius: 20px;">
+        <form   action="loginentrypage.html">
+          <h1>LOGIN</h1><br><br>
+          <img style="height: 120px; width: 250px; align-items: center;"class="img" src="image (2).jpeg" alt="not found">
+          
+          <label for="username"><b>Username:</b></label>
+          <input type="text" id="username" name="username" placeholder="Enter Username" required>
+          <label for="password"><b>Password:</b></label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+          <a href="forgetPassword.html"><b>Forget Password</b></a><br>
+          <button type="submit">Continue</button><br>
+        </form>
+
+        <p>Don't Have Account? <a href="signup2.html"><b>Sign Up</b></a></p>
+    </div>
+    
+    
+</body>
+</html>

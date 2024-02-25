@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+header{
+   
+    
+
+    width: 100%;
+    height:70vh ;
+    /* overflow: hidden; */
+    /* position: relative; */
+    /* object-fit: cover; */
+}
+
+
+.form{
+    padding:10px;
+    width: 500px;
+    background-color: white;
+   
+   
+    
+}
+#drop{
+    border: 2px solid black;
+    padding:10px;
+    width: 200px;
+    background-color: white;
+    margin-left: 50%;
+   
+}
+.nav{
+    display: flex;
+   
+    justify-content: space-between;
+    color: white;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav1{
+    display: flex;
+    list-style: none;
+}
+ul li{
+    margin-right: 60px;
+}

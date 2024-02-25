@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="loginentry.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Close button styles */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav{
+            margin-top: 2vh;
+            padding:20px;
+            background-color: #333;
+            /* color: rgb(245, 157, 69); */
+            background-color:rgb(245, 157, 69);
+            color:#333;
+        }
+        .nav1{
+            font-size: large;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+          
+        }
+    
+        .container {
+          display: flex;
+          width: 80%;
+          margin: 0 auto; 
+          padding: 20px;
+          margin-top: -50vh;
+          
+        }
+    
+        .left-side {
+          flex: 1;
+          text-align: center;
+        }
+    
+        .left-side img {
+          
+          height: 90vh;
+          margin-left: -10vw;
+          margin-top: -5px;
+          
+        }
+    
+        .right-side {
+          margin-top: -10vh;
+          flex: 2;
+          padding: 10px;
+          box-sizing: border-box;
+        
+        }
+    
+        .logo {
+          max-width: 100%;
+          height: auto;
+          margin-left: 20%;
+          margin-top: -30px;
+          justify-content: center;
+        }
+    
+        .form {
+          margin-left: 30%;
+          margin-top: 5vh;
+          border-radius: 8px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+    
+        .form select,
+        .form input {
+          border: none;
+          outline: none;
+          font-size: large;
+        }
+    
+        .drop {
+          color: red;
+          padding-right: 10px;
+        }
+        .equal{
+            display: flex;
+            flex-direction: row;
+            width:30vw;
+            
+        }
+        .ck{
+            padding-bottom: 20px;
+            
+
+        }
+        h3{
+            margin-top: -2vh;
+            justify-content: center;
+        }
+        h2{
+          color:#333;
+        }
+
+        .card1, .card2,.card3,.card4{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+        
+        .cards{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          
+         
+        }
+        .cards2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 40px;
+        }
+        .card5, .card6,.card7,.card8{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+       
+    /* Add some basic styling for the cards */
+    body{
+      background-color: black;
+      color: white;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border:2px solid #333;
+          height: 250px;
+          /* width: 1900px; */
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          margin-left: 30px;
+          margin-right: 20px;
+    }
+    .card:hover {
+      background-color: #f0f0f0;
+    }
+    .cart-container {
+      
+    }
+    img{
+        width:300px;
+    }
+    .place{
+      margin-top: -30vh;
+      margin-left: 30%;
+      font-size: larger;
+
+    
+
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="equal">
+                <img class="ck" style="height: 100px; width: 150px;" src="image (2).jpeg" alt="" class="logo">
+                <h2 style="margin-left: 30px; margin-top: 30px;" >Get the App</h2>
+            </div>
+            <ul class="nav1">
+                <li><b><a href="loginentrypage.html" style="text-decoration: none; color: black;" >Home</a></b></li>
+                <li class="menu" style=" color: black;"><b><a href="#cards" style="text-decoration: none; color: black;">Menu</a></b></li>
+                <li class="menu" style=" color: black;"><b>Profile </b></li>
+                <li class="menu" style=" color: black;"><b><a href="about.html" style="text-decoration: none; color: black;">About Us</a></b></li>
+                <li class="menu" style=" color: black;"><b ><a class="menu" href="signup2.html" style="text-decoration: none; color: black;">Sign Up </a></b></li>
+            </ul>
+        </div> 
+    </header>
+    <!-- Payment options -->
+    <div class="place">
+        <label for="payment" style="padding-bottom: 20px;">Choose a payment method:</label>
+        <select id="payment">
+            <option value="phonepe" style="padding-bottom: 20px;">PhonePe</option>
+            <option value="gpay" style="padding-top: 20px;">GPay</option>
+         </select>
+         <button onclick="openModal()">Proceed to Pay</button>
+    </div>
+    <br><br>
+
+    <!-- Button to trigger modal -->
+    
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Enter your PIN</h2>
+            <input type="password" id="pin" placeholder="Enter your PIN"><br><br>
+            <button onclick="submitPayment()">Submit</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to control modal -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("payment");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to submit payment
+        function submitPayment() {
+    var selectedPayment = document.getElementById("payment").value;
+    var pin = document.getElementById("pin").value;
+
+    // Retrieve shopping history from local storage
+    let shoppingHistory = JSON.parse(localStorage.getItem('shoppingHistory')) || [];
+
+    // Perform payment submission logic here
+    if (pin !== "") {
+        // If PIN is entered, proceed with payment
+        alert("Your payment is successful and your order is placed!");
+
+        // Mark the latest entry in the shopping history as paid
+        if (shoppingHistory.length > 0) {
+            shoppingHistory[shoppingHistory.length - 1].paid = true;
+            // Update local storage
+            localStorage.setItem('shoppingHistory', JSON.stringify(shoppingHistory));
+
+            // Refresh the displayed shopping history
+            refreshShoppingHistory(shoppingHistory);
+        }
+
+        
+        // Redirect to home page
+        
+        closeModal();
+        window.location.href = "loginentryPage.html";
+    } else {
+        // If PIN is not entered, show error message
+        alert("Please enter your PIN.");
+    }
+   
+}
+    </script>
+</body>
+</html>

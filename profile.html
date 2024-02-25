@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato - Profile</title>
+    <!-- Your profile page CSS styles here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Profile</h1>
+        <div id="profile-info">
+            <!-- Profile information will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve login data from local storage
+            const username = localStorage.getItem('username');
+            const password = localStorage.getItem('password');
+            
+            // Display login data on the profile page
+            if (username && password) {
+                document.getElementById('profile-info').innerHTML = `
+                    <p>Username: ${username}</p>
+                    <p>Password: ${password}</p>
+                `;
+            } else {
+                // Redirect to login page if login data is not found
+                window.location.href = 'login (2).html';
+            }
+        });
+    </script>
+</body>
+</html>

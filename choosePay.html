@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Pin Entry</title>
+  
+  <link rel="stylesheet" href="loginentry.css">
+  <style>
+    .nav{
+            margin-top: 2vh;
+            padding:20px;
+            background-color: #333;
+            /* color: rgb(245, 157, 69); */
+            background-color:rgb(245, 157, 69);
+            color:#333;
+        }
+        .nav1{
+            font-size: large;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+          
+        }
+    
+        .container {
+          display: flex;
+          width: 80%;
+          margin: 0 auto; 
+          padding: 20px;
+          margin-top: -50vh;
+          
+        }
+    
+        .left-side {
+          flex: 1;
+          text-align: center;
+        }
+    
+        .left-side img {
+          
+          height: 90vh;
+          margin-left: -10vw;
+          margin-top: -5px;
+          
+        }
+    
+        .right-side {
+          margin-top: -10vh;
+          flex: 2;
+          padding: 10px;
+          box-sizing: border-box;
+        
+        }
+    
+        .logo {
+          max-width: 100%;
+          height: auto;
+          margin-left: 20%;
+          margin-top: -30px;
+          justify-content: center;
+        }
+    
+        .form {
+          margin-left: 30%;
+          margin-top: 5vh;
+          border-radius: 8px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+    
+        .form select,
+        .form input {
+          border: none;
+          outline: none;
+          font-size: large;
+        }
+    
+        .drop {
+          color: red;
+          padding-right: 10px;
+        }
+        .equal{
+            display: flex;
+            flex-direction: row;
+            width:30vw;
+            
+        }
+        .ck{
+            padding-bottom: 20px;
+            
+
+        }
+        h3{
+            margin-top: -2vh;
+            justify-content: center;
+        }
+        h2{
+          color:#333;
+        }
+
+        .card1, .card2,.card3,.card4{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+        
+        .cards{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          
+         
+        }
+        .cards2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 40px;
+        }
+        .card5, .card6,.card7,.card8{
+          border:2px solid #333;
+          height: 250px;
+          width: 1900px;
+          /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+          background-color:rgb(245, 157, 69) ;
+          border-radius: 20px;
+          
+          margin-left: 30px;
+          margin-right: 20px;
+          text-align: center;
+        }
+       
+    .container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav{
+          margin-top: 2vh;
+          padding:20px;
+          background-color: #333;
+          /* color: rgb(245, 157, 69); */
+          background-color:rgb(245, 157, 69);
+          color:#333;
+      }
+      .nav1{
+          font-size: large;
+          font-weight: 300;
+          margin-top: 40px;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #333;
+        color: white;
+
+      }
+
+      .container {
+        display: flex;
+        width: 80%;
+        margin: 0 auto; 
+        padding: 20px;
+        margin-top: -50vh;
+
+      }
+
+      .left-side {
+        flex: 1;
+        text-align: center;
+      }
+
+      .left-side img {
+
+        height: 90vh;
+        margin-left: -10vw;
+        margin-top: -5px;
+
+      }
+
+      .right-side {
+        margin-top: -10vh;
+        flex: 2;
+        padding: 10px;
+        box-sizing: border-box;
+      
+      }
+
+      .logo {
+        max-width: 100%;
+        height: auto;
+        margin-left: 20%;
+        margin-top: -30px;
+        justify-content: center;
+      }
+
+      .form {
+        margin-left: 30%;
+        margin-top: 5vh;
+        border-radius: 8px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .form select,
+      .form input {
+        border: none;
+        outline: none;
+        font-size: large;
+      }
+
+      .drop {
+        color: red;
+        padding-right: 10px;
+      }
+      .equal{
+          display: flex;
+          flex-direction: row;
+          width:30vw;
+
+      }
+      .ck{
+          padding-bottom: 20px;
+
+      
+      }
+      h3{
+          margin-top: -2vh;
+          justify-content: center;
+      }
+      h2{
+        color:#333;
+      }
+
+      .card1, .card2,.card3,.card4{
+        border:2px solid #333;
+        height: 250px;
+        width: 1900px;
+        /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+        background-color:rgb(245, 157, 69) ;
+        border-radius: 20px;
+
+        margin-left: 30px;
+        margin-right: 20px;
+        text-align: center;
+      }
+
+      .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+      
+      }
+      .cards2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+      .card5, .card6,.card7,.card8{
+        border:2px solid #333;
+        height: 250px;
+        width: 1900px;
+        /* background:linear-gradient(to left bottom, rgb(245, 157, 69),#333); */
+        background-color:rgb(245, 157, 69) ;
+        border-radius: 20px;
+
+        margin-left: 30px;
+        margin-right: 20px;
+        text-align: center;
+      }
+      .payment{
+        margin-top: -20vh;
+        /* margin-left: 40%; */
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+      }
+
+
+  </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="equal">
+                <img class="ck" style="height: 100px; width: 150px;" src="image (2).jpeg" alt="" class="logo">
+                <h2 style="margin-left: 30px; margin-top: 30px;" >Get the App</h2>
+            </div>
+            <ul class="nav1">
+                <li><b><a href="loginentrypage.html" style="text-decoration: none; color: black;" >Home</a></b></li>
+                <li class="menu" style=" color: black;"><b>Menu</b></li>
+                <li class="menu" style=" color: black;"><b>Profile </b></li>
+                <li class="menu" style=" color: black;"><b>About Us</b></li>
+                <li class="menu" style=" color: black;"><b ><a class="menu" href="signup2.html" style="text-decoration: none; color: black;">Sign Up </a></b></li>
+            </ul>
+        </div> 
+    </header>
+  <div class="container">
+    <h1>Choose Payment Method</h1>
+    <button onclick="openModal('phonepe')">PhonePe</button>
+    <button onclick="openModal('gpay')">Google Pay (GPay)</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Enter UPI PIN</h2>
+      <input type="password" id="upiPin" placeholder="Enter UPI PIN">
+      <button onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Function to open modal
+        function openModal(method) {
+          modal.style.display = "block";
+          console.log("Selected payment method: " + method);
+        }
+
+        // Function to close modal
+        function closeModal() {
+          modal.style.display = "none";
+        }
+
+        // Function to place order
+        function placeOrder() {
+          var upiPin = document.getElementById("upiPin").value;
+          console.log("UPI Pin entered: " + upiPin);
+          // Add code to process the order here
+          closeModal(); // Close the modal after placing the order
+        }
+
+  </script>
+</body>
+</html>

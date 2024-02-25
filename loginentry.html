@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left Image, Right Content</title>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      width: 80%; /* Adjust as needed */
+    }
+
+    .left-side {
+      flex: 1;
+    }
+
+    .right-side {
+      flex: 2; /* Adjust the ratio between left and right as needed */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left-side">
+    <img src="your-image-url.jpg" alt="Left Image">
+  </div>
+  <div class="right-side">
+    <h1>Your Content Goes Here</h1>
+    <p>More content...</p>
+  </div>
+</div>
+
+</body>
+</html>

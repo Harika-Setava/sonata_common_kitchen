@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant List</title>
+    <link rel="stylesheet" href="menu.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant List</h1>
+        <div class="filter-section">
+            <label for="cuisine-select">Cuisine:</label>
+            <select id="cuisine-select">
+                <option value="all">All</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="chinese">Chinese</option>
+                <!-- Add more cuisine options as needed -->
+            </select>
+            <label for="price-range">Price Range:</label>
+            <select id="price-range">
+                <option value="all">All</option>
+                <option value="cheap">Cheap</option>
+                <option value="moderate">Moderate</option>
+                <option value="expensive">Expensive</option>
+                <!-- Add more price range options as needed -->
+            </select>
+        </div>
+        <div class="restaurant-list">
+            <div class="restaurant">
+                <img src="restaurant1.jpg" alt="Restaurant 1">
+                <div class="details">
+                    <h2>Restaurant 1</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget leo ac arcu consectetur ultricies.</p>
+                    <a href="restaurant1.html">View Details</a>
+                </div>
+            </div>
+            <div class="restaurant">
+                <img src="restaurant2.jpg" alt="Restaurant 2">
+                <div class="details">
+                    <h2>Restaurant 2</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget leo ac arcu consectetur ultricies.</p>
+                    <a href="restaurant2.html">View Details</a>
+                </div>
+            </div>
+            <!-- Add more restaurant entries as needed -->
+        </div>
+    </div>
+</body>
+</html>

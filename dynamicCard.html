@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamically Generated Cards</title>
+  <style>
+    .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 250px; /* Set the width of the card */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card img {
+  width: 100%; /* Ensure the image fills its container */
+  height: 150px; /* Set the height of the image */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="input-container">
+    <label>
+        <input type="checkbox" id="same-title-image"> Use same title and image for all cards
+      </label>
+      
+    <label for="title">Title:</label>
+    <input type="text" id="title" placeholder="Enter title">
+    
+    <label for="image-url">Image Address:</label>
+    <input type="text" id="image-url" placeholder="Enter image address">
+    
+    <label for="num-of-cards">Number of Cards:</label>
+    <input type="number" id="num-of-cards" placeholder="Enter number of cards">
+
+    <button onclick="generateCards()">Generate Cards</button>
+  </div>
+
+  <div id="card-container" class="card-container">
+    <!-- Cards will be dynamically added here -->
+  </div>
+
+  <script>// Function to generate cards based on user input and store them in local storage
+    function generateCards() {
+      const numOfCards = parseInt(document.getElementById('num-of-cards').value);
+      const useSameTitleImage = document.getElementById('same-title-image').checked;
+    
+      if (isNaN(numOfCards) || numOfCards <= 0) {
+        alert('Please enter a valid number of cards.');
+        return;
+      }
+    
+      const cardContainer = document.getElementById('card-container');
+      cardContainer.innerHTML = ''; // Clear previous cards
+    
+      let title = '';
+      let imageUrl = '';
+    
+      if (!useSameTitleImage) {
+        for (let i = 0; i < numOfCards; i++) {
+          title = prompt(`Enter title for card ${i + 1}:`);
+          if (!title) {
+            alert('Please provide a title for each card.');
+            return;
+          }
+          imageUrl = prompt(`Enter image URL for card ${i + 1}:`);
+          if (!imageUrl) {
+            alert('Please provide an image URL for each card.');
+            return;
+          }
+    
+          const cardData = {
+            title: title,
+            imageUrl: imageUrl
+          };
+    
+          localStorage.setItem(`card_${i}`, JSON.stringify(cardData));
+        }
+      } else {
+        title = prompt(`Enter title for all cards:`);
+        if (!title) {
+          alert('Please provide a title for all cards.');
+          return;
+        }
+        imageUrl = prompt(`Enter image URL for all cards:`);
+        if (!imageUrl) {
+          alert('Please provide an image URL for all cards.');
+          return;
+        }
+    
+        const cardData = {
+          title: title,
+          imageUrl: imageUrl
+        };
+    
+        for (let i = 0; i < numOfCards; i++) {
+          localStorage.setItem(`card_${i}`, JSON.stringify(cardData));
+        }
+      }
+    
+      loadCardsFromStorage(); // Load cards after generating
+    }
+    
+    // Function to load cards from local storage
+    function loadCardsFromStorage() {
+      const cardContainer = document.getElementById('card-container');
+    
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('card_')) {
+          const cardData = JSON.parse(localStorage.getItem(key));
+          const card = createCardElement(cardData);
+          cardContainer.appendChild(card);
+        }
+      }
+    }
+    
+    // Function to create a card element
+    function createCardElement(cardData) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+    
+      const cardTitle = document.createElement('h3');
+      cardTitle.textContent = cardData.title;
+    
+      const image = document.createElement('img');
+      image.src = cardData.imageUrl;
+      image.alt = cardData.title;
+    
+      card.appendChild(cardTitle);
+      card.appendChild(image);
+    
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', function() {
+        card.remove();
+        removeFromLocalStorage(cardData.title); // Remove from local storage
+      });
+    
+      card.appendChild(deleteButton);
+    
+      return card;
+    }
+    
+    // Function to remove a card from local storage
+    function removeFromLocalStorage(title) {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('card_')) {
+          const cardData = JSON.parse(localStorage.getItem(key));
+          if (cardData.title === title) {
+            localStorage.removeItem(key);
+          }
+        }
+      }
+    }
+    
+    // Load cards from local storage when the page loads
+    window.onload = loadCardsFromStorage;
+    
+    
+  </script>
+</body>
+</html>
+
